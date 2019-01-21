@@ -3,11 +3,11 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Veronica Gawarecki.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -18,32 +18,37 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 
 import rosegraphics as rg
-
+import math
 
 def main():
     """
     TESTS the functions that you will write below.
     You write the tests per the _TODO_s below.
     """
-
+    print(hp(3,4))
+    fcnone('blue',5)
+    fcnone('red',10)
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# DONE: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
 #     HINT: Apply the Pythagorean theorem.
 #
 #   You may name the function and its parameters whatever you wish.
-#
-# TODO: 3b.  In main, CALL your function and print the returned value,
+
+def hp(a,b):
+     h= math.sqrt(a**2+b**2)
+     return h
+# DONE: 3b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
 
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# DONE: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -64,8 +69,16 @@ def main():
 #     d. Tells the TurtleWindow to wait until the mouse is clicked.
 #
 #   You may name the function and its parameters whatever you wish.
-#
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+def fcnone(color,thickness):
+    window=rg.TurtleWindow()
+    turtleone=rg.SimpleTurtle()
+    turtletwo=rg.SimpleTurtle()
+    turtleone.pen=rg.Pen('green',thickness)
+    turtletwo.pen=rg.Pen(color,5)
+    turtleone.forward(100)
+    turtletwo.backward(100)
+    window.close_on_mouse_click()
+# DONE: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
